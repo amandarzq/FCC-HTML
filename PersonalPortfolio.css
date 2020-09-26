@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300;400;500;700&display=swap');
+
+:root {
+    --small-font: 'Quicksand', sans-serif;
+    --big-font: 'Bebas Neue', cursive;
+    --gray: rgb(110, 110, 110);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--small-font);
+  overflow-x: hidden;
+  border-box: 5px solid red;
+}
+
+a { 
+    text-decoration: none;
+    color:  var(--gray);
+}
+
+header {
+background-color: rgba(255, 255, 255, 0.74); 
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 999;
+display: flex;
+justify-content: center;
+font-family: var(--small-font);
+font-weight: 500;
+}
+#navbar ul li {
+    display: inline-block;
+    padding: 1rem;
+    margin: 0 10px;
+}
+#navbar a {
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome-section {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+#welcome-section h1 {
+    color: rgb(10, 206, 206);
+    font-size: 4rem;
+    text-align: center;
+    font-family: var(--big-font);
+}
+#welcome-section p {
+    font-size: 1.6rem;
+    color: pink;
+    font-weight: bold;
+}
+
+#about {
+    position: relative;
+    min-height: 700px;
+}
+.cat {
+    position: absolute;
+    left: 5%;
+}
+.cat img {
+    width: 100%;
+}
+.text {
+    position: absolute;
+    left: 32vw;
+    top: 5vw;
+}
+.text h2 {
+    font-size: 4rem;
+    color: black;
+}
+.text p {
+    width: 50vw;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-left: 3rem;
+    padding: .5em;
+    font-size: 1.5rem;
+    background-color: rgb(162, 240, 240);
+}
+
+#projects {
+    width: 100%;
+    background-color: rgb(236, 234, 234);
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    color: rgb(245, 137, 155);
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+#projects h2 {
+    font-size: 4rem;
+}
+.project-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-image {
+    max-width: 500px;
+    min-width: 200px;
+    margin: 1rem;
+    border-radius: .4rem;
+}
+#projects img {
+    width: 100%
+}
+.image-wrap {
+    position: relative;
+}
+.layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(236, 234, 234, 0.363);
+    font-weight: bold;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .2s, visibility .2s;
+}
+.image-wrap:hover .layer {
+    visibility: visible;
+    opacity: 1;
+}
+.description {
+    transition: .2s;
+    transform: translateY(1em);
+    background-color: rgba(0, 255, 255, 0.425);
+    padding: .5em;
+    border-radius: .5em;
+}
+.image-wrap:hover .description {
+    transform: translateY(0);
+}
+
+footer {
+    width: 100vw;
+    text-align: center;
+    background-color: aqua;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#contact ul li {
+    display: inline-block;
+}
+#contact li {
+    border: none;
+    padding: .5rem;
+    margin: 2rem;
+}
+
+footer img {
+    width: 4rem;
+    display: block;
+}
+
+h2 {
+    font-family: var(--big-font);
+    font-size: 2.8rem;
+}
+footer p {
+    color: var(--gray);
+}
+
+  /* tablets*/
+  @media screen  and (max-width: 768px) {
+   
+    .cat {
+        position: absolute;
+        left: 2%;
+    }
+    .text {
+        position: absolute;
+        top: 5vw;
+    }
+    .text p {
+        font-weight: 400;
+        line-height: 1.2;
+        padding: .5em;
+        font-size: 1.4rem;
+    }
+  }
+  /* mobile */
+  @media screen and (max-width: 480px){
+    .welcome-section h1 {
+      font-size: 2rem;
+    }
+    .welcome-section p {
+      font-size: 1rem;
+    }
+    #projects img {
+      min-width: 100%;
+      margin: 2% 0;
+    }
+    
+    .text {
+        position: absolute;
+        top: 5vw;
+    }
+    .text p {
+        font-weight: 400;
+        line-height: 1.2;
+        padding: .5em;
+        font-size: 1rem;
+    }
+  }
